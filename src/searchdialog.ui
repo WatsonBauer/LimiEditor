@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SearchDialog</class>
+ <widget class="QDialog" name="SearchDialog">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>225</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>查找和替换</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="Find">
+      <property name="whatsThis">
+       <string>查找</string>
+      </property>
+      <attribute name="title">
+       <string>查找(D)</string>
+      </attribute>
+      <widget class="QCheckBox" name="MatchCase_checkBox_1">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>103</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>区分大小写(C)</string>
+       </property>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_1">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>80</y>
+         <width>151</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>方向</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QRadioButton" name="Up_radioButton_1">
+            <property name="text">
+             <string>向上(U)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="Down_radioButton_1">
+            <property name="text">
+             <string>向下(D)</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="FindNext_pushButton_1">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>150</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="whatsThis">
+        <string>查找不到下一个</string>
+       </property>
+       <property name="text">
+        <string>查找下一个(F)</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Cancel_pushButton_1">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>150</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>331</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_1">
+        <item>
+         <widget class="QLabel" name="FindWhat_label_1">
+          <property name="whatsThis">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;查找失败！&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>查找内容(N):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="FindWhat_lineEdit_1"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Replace">
+      <attribute name="title">
+       <string>替换(P)</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>331</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="FindWhat_label_2">
+          <property name="text">
+           <string>查找内容(N):</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="FindWhat_lineEdit_2"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>80</y>
+         <width>151</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>方向</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QRadioButton" name="Up_radioButton_2">
+            <property name="text">
+             <string>向上(U)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="Down_radioButton_2">
+            <property name="text">
+             <string>向下(D)</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QCheckBox" name="MatchCase_checkBox_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>103</y>
+         <width>101</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>区分大小写(C)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="FindNext_pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>150</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>查找下一个(F)</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Cancel_pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>150</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>331</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="ReplaceWith_label">
+          <property name="text">
+           <string>替换为(P):  </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="ReplaceWith_lineEdit"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="ReplaceAll_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>120</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>全部替换(A)</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Replace_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>90</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>替换(R)</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Goto">
+      <property name="whatsThis">
+       <string>跳行</string>
+      </property>
+      <attribute name="title">
+       <string>转到(G)</string>
+      </attribute>
+      <widget class="QPushButton" name="Cancel_pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>150</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Goto_pushButton">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>150</y>
+         <width>90</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="whatsThis">
+        <string>第 # 行不存在</string>
+       </property>
+       <property name="text">
+        <string>转到</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>50</y>
+         <width>331</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="LineNo_label">
+          <property name="whatsThis">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;行号错误!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>行号(L):    </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="LineNo_lineEdit"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>on_FindTab_clicked()</slot>
+  <slot>on_ReplaceTab_clicked()</slot>
+  <slot>on_Goto_clicked()</slot>
+ </slots>
+</ui>

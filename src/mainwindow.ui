@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>无标题 - LimiEditor</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/Icons/LimiEditor.png</normaloff>:/Icons/LimiEditor.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit">
+      <property name="font">
+       <font>
+        <family>宋体</family>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="lineWrapMode">
+       <enum>QTextEdit::NoWrap</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="whatsThis">
+     <string>文本文档(*.txt);;所有文件(*.*)</string>
+    </property>
+    <property name="title">
+     <string>文件(F)</string>
+    </property>
+    <addaction name="action_New"/>
+    <addaction name="action_Open"/>
+    <addaction name="action_Save"/>
+    <addaction name="action_saveAs"/>
+    <addaction name="separator"/>
+    <addaction name="action_pagesetUp"/>
+    <addaction name="action_Print"/>
+    <addaction name="separator"/>
+    <addaction name="action_eXit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>编辑(E)</string>
+    </property>
+    <addaction name="action_Undo"/>
+    <addaction name="action_Redo"/>
+    <addaction name="separator"/>
+    <addaction name="action_Trim"/>
+    <addaction name="action_Copy"/>
+    <addaction name="action_Paste"/>
+    <addaction name="action_deL"/>
+    <addaction name="separator"/>
+    <addaction name="action_Find"/>
+    <addaction name="action_findNext"/>
+    <addaction name="action_Replace"/>
+    <addaction name="action_Goto"/>
+    <addaction name="separator"/>
+    <addaction name="action_selectAll"/>
+    <addaction name="action_Date"/>
+   </widget>
+   <widget class="QMenu" name="menu_layOut">
+    <property name="title">
+     <string>格式(O)</string>
+    </property>
+    <addaction name="action_lineWrap"/>
+    <addaction name="action_Font"/>
+   </widget>
+   <widget class="QMenu" name="menu_View">
+    <property name="title">
+     <string>查看(V)</string>
+    </property>
+    <addaction name="action_Statusbar"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>帮助(H)</string>
+    </property>
+    <addaction name="action_Help"/>
+    <addaction name="separator"/>
+    <addaction name="action_About"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_layOut"/>
+   <addaction name="menu_View"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_New"/>
+   <addaction name="action_Open"/>
+   <addaction name="action_Save"/>
+   <addaction name="action_saveAs"/>
+   <addaction name="separator"/>
+   <addaction name="action_pagesetUp"/>
+   <addaction name="action_Print"/>
+   <addaction name="separator"/>
+   <addaction name="action_Undo"/>
+   <addaction name="action_Redo"/>
+   <addaction name="separator"/>
+   <addaction name="action_Trim"/>
+   <addaction name="action_Copy"/>
+   <addaction name="action_Paste"/>
+   <addaction name="action_deL"/>
+   <addaction name="separator"/>
+   <addaction name="action_Find"/>
+   <addaction name="action_Replace"/>
+   <addaction name="action_Goto"/>
+   <addaction name="action_selectAll"/>
+   <addaction name="separator"/>
+   <addaction name="action_Date"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="whatsThis">
+    <string>第 # 行，第 $ 列</string>
+   </property>
+  </widget>
+  <action name="action_New">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/New.png</normaloff>
+     <normalon>:/Icons/New.png</normalon>Icons/New.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建(N)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="action_Open">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/Open.png</normaloff>
+     <normalon>:/Icons/Open.png</normalon>Icons/Open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开(O)...</string>
+   </property>
+   <property name="toolTip">
+    <string>打开(O)</string>
+   </property>
+   <property name="whatsThis">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_Save">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Save.png</normaloff>:/Icons/Save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存(S)</string>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;该文档已被修改&lt;/span&gt;&lt;/p&gt;&lt;p&gt;是否保存这些修改？&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_saveAs">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/saveAs.png</normaloff>:/Icons/saveAs.png</iconset>
+   </property>
+   <property name="text">
+    <string>另存为(A)...</string>
+   </property>
+   <property name="whatsThis">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="action_pagesetUp">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/pagesetUp.png</normaloff>:/Icons/pagesetUp.png</iconset>
+   </property>
+   <property name="text">
+    <string>页面设置(U)...</string>
+   </property>
+  </action>
+  <action name="action_Print">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Print.png</normaloff>:/Icons/Print.png</iconset>
+   </property>
+   <property name="text">
+    <string>打印(P)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="action_eXit">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/eXit.png</normaloff>:/Icons/eXit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出(X)</string>
+   </property>
+  </action>
+  <action name="action_Undo">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Undo.png</normaloff>:/Icons/Undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>后退(U)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_Redo">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Redo.png</normaloff>:/Icons/Redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>前进(R)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="action_Trim">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Cut.png</normaloff>:/Icons/Cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切(T)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="action_Copy">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Copy.png</normaloff>:/Icons/Copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制(C)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_Paste">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Paste.png</normaloff>:/Icons/Paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴(P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="action_deL">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/deL.png</normaloff>:/Icons/deL.png</iconset>
+   </property>
+   <property name="text">
+    <string>删除(L)</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="action_Find">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Find.png</normaloff>:/Icons/Find.png</iconset>
+   </property>
+   <property name="text">
+    <string>查找(F)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="action_findNext">
+   <property name="text">
+    <string>查找下一个(N)</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="action_Replace">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Replace.png</normaloff>:/Icons/Replace.png</iconset>
+   </property>
+   <property name="text">
+    <string>替换(R)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="action_Goto">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Goto.png</normaloff>:/Icons/Goto.png</iconset>
+   </property>
+   <property name="text">
+    <string>转到(G)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+  <action name="action_selectAll">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/selectAll.png</normaloff>:/Icons/selectAll.png</iconset>
+   </property>
+   <property name="text">
+    <string>全选(A)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_Date">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/Icons/Date.png</normaloff>:/Icons/Date.png</iconset>
+   </property>
+   <property name="text">
+    <string>时间/日期(D)</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="action_lineWrap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>自动换行(W)</string>
+   </property>
+  </action>
+  <action name="action_Font">
+   <property name="text">
+    <string>字体(F)...</string>
+   </property>
+  </action>
+  <action name="action_Statusbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>状态栏(S)</string>
+   </property>
+  </action>
+  <action name="action_Help">
+   <property name="text">
+    <string>查看帮助(H)</string>
+   </property>
+  </action>
+  <action name="action_About">
+   <property name="text">
+    <string>关于LimiEditor(A)</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/Icons">
+        <file>New.png</file>
+        <file>Undo.png</file>
+        <file>Redo.png</file>
+        <file>Open.png</file>
+        <file>Cut.png</file>
+        <file>Copy.png</file>
+        <file>Paste.png</file>
+        <file>Save.png</file>
+        <file>saveAs.png</file>
+        <file>eXit.png</file>
+        <file>deL.png</file>
+        <file>LimiEditor.png</file>
+        <file>Find.png</file>
+        <file>Replace.png</file>
+        <file>Goto.png</file>
+        <file>selectAll.png</file>
+        <file>Date.png</file>
+        <file>Limiton.png</file>
+        <file>pagesetUp.png</file>
+        <file>Print.png</file>
+    </qresource>
+</RCC>
